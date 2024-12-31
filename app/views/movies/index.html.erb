@@ -23,8 +23,8 @@
         <td><%= movie.rating %></td>
         <td><%= movie.release_date%></td>
         <td>
-          <%= link_to "Show", movie %> |
-          <%= link_to "Edit", edit_movie_path(movie) %> |
+          <%= link_to "Show", movie_path(movie, request.query_parameters) %> |
+          <%= link_to "Edit", edit_movie_path(movie, request.query_parameters) %> |
           <%= link_to "Delete", movie, method: :delete, data: { confirm: "Are you sure?" } %>
         </td>
       </tr>
