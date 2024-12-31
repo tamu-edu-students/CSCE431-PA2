@@ -34,10 +34,8 @@ Rails.application.configure do
   # config.ssl_options = { redirect: { exclude: ->(request) { request.path == "/up" } } }
 
   # Log to STDOUT with the current request id as a default log tag.
-  # Log to STDOUT with the current request id as a default log tag.
-config.log_tags = [:request_id]
-config.logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
-
+  config.log_tags = [:request_id]
+  config.logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
 
   # Change to "debug" to log everything (including potentially personally-identifiable information!).
   config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
@@ -48,8 +46,8 @@ config.logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
 
-  # Replace the default in-process memory cache store with a durable alternative.
-  config.cache_store = :solid_cache_store
+  # Remove solid_cache_store and use default cache store.
+  config.cache_store = :memory_store  # Changed from solid_cache_store
 
   # Remove solid_queue configuration (if not using it).
   # config.solid_queue.connects_to = { database: { writing: :queue } }  # Removed
