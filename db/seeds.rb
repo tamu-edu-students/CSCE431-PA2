@@ -19,7 +19,7 @@ more_movies = [
   { title: 'Nomadland', rating: 'R',
     release_date: '19-Feb-2021' },
   { title: 'CODA', rating: 'PG-13',
-    release_date: '13-Aug-2021' }
+    release_date: '13-Aug-2021' },
     { title: 'End Game', rating: 'PG-13',
     release_date: '24-April-2019' },
   { title: 'Ponyo', rating: 'G',
