@@ -28,10 +28,3 @@ production:
   pool: 5
   timeout: 5000
 
-  # Add the following configuration for the cable database:
-  cable:
-    adapter: postgresql
-    encoding: unicode
-    database: <%= ENV['CABLE_DATABASE_URL'] %>
-    pool: 5
-    timeout: 5000
