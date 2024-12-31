@@ -21,11 +21,17 @@ test:
   database: storage/test.sqlite3
 
 
-# Store production database in the storage/ directory, which by default
-# is mounted as a persistent Docker volume in config/deploy.yml.
 production:
   adapter: postgresql
   encoding: unicode
   database: <%= ENV['DATABASE_URL'] %>
   pool: 5
   timeout: 5000
+
+  # Add the following configuration for the cable database:
+  cable:
+    adapter: postgresql
+    encoding: unicode
+    database: <%= ENV['CABLE_DATABASE_URL'] %>
+    pool: 5
+    timeout: 5000
