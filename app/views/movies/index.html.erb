@@ -1,35 +1,53 @@
 <h1>Movies</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>
-        <%= link_to 'Title', movies_path(sort_by: 'title', direction: sort_direction('title')) %>
-      </th>
-      <th>
-        <%= link_to 'Rating', movies_path(sort_by: 'rating', direction: sort_direction('rating')) %>
-      </th>
-      <th>
-        <%= link_to 'Release Date', movies_path(sort_by: 'release_date', direction: sort_direction('release_date')) %>
-      </th>
-      <th>Actions</th>
-    </tr>
-  </thead>
+<thead>
+<tr>
+  <th class="<%= 'sorted-asc' if params[:sort_by] == 'title' && params[:direction] == 'asc' %>
+              <%= 'sorted-desc' if params[:sort_by] == 'title' && params[:direction] == 'desc' %>">
+    <%= link_to 'Title', movies_path(sort_by: 'title', direction: sort_direction('title')) %>
+    <span class="sort-symbol"><%= '▲' if params[:sort_by] == 'title' && params[:direction] == 'asc' %>
+    <%= '▼' if params[:sort_by] == 'title' && params[:direction] == 'desc' %></span>
+  </th>
+  <th class="<%= 'sorted-asc' if params[:sort_by] == 'rating' && params[:direction] == 'asc' %>
+              <%= 'sorted-desc' if params[:sort_by] == 'rating' && params[:direction] == 'desc' %>">
+    <%= link_to 'Rating', movies_path(sort_by: 'rating', direction: sort_direction('rating')) %>
+    <span class="sort-symbol"><%= '▲' if params[:sort_by] == 'rating' && params[:direction] == 'asc' %>
+    <%= '▼' if params[:sort_by] == 'rating' && params[:direction] == 'desc' %></span>
+  </th>
+  <th class="<%= 'sorted-asc' if params[:sort_by] == 'release_date' && params[:direction] == 'asc' %>
+              <%= 'sorted-desc' if params[:sort_by] == 'release_date' && params[:direction] == 'desc' %>">
+    <%= link_to 'Release Date', movies_path(sort_by: 'release_date', direction: sort_direction('release_date')) %>
+    <span class="sort-symbol"><%= '▲' if params[:sort_by] == 'release_date' && params[:direction] == 'asc' %>
+    <%= '▼' if params[:sort_by] == 'release_date' && params[:direction] == 'desc' %></span>
+  </th>
+  <th>Actions</th>
+</tr>
+</thead>
 
-  <tbody>
-    <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.title %></td>
-        <td><%= movie.rating %></td>
-        <td><%= movie.release_date%></td>
-        <td>
-          <%= link_to "Show", movie_path(movie, request.query_parameters) %> |
-          <%= link_to "Edit", edit_movie_path(movie, request.query_parameters) %> |
-          <%= link_to "Delete", movie, method: :delete, data: { confirm: "Are you sure?" } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
+<tbody>
+<% @movies.each do |movie| %>
+  <tr>
+    <td class="<%= 'sorted-asc' if params[:sort_by] == 'title' && params[:direction] == 'asc' %>
+               <%= 'sorted-desc' if params[:sort_by] == 'title' && params[:direction] == 'desc' %>">
+      <%= movie.title %>
+    </td>
+    <td class="<%= 'sorted-asc' if params[:sort_by] == 'rating' && params[:direction] == 'asc' %>
+               <%= 'sorted-desc' if params[:sort_by] == 'rating' && params[:direction] == 'desc' %>">
+      <%= movie.rating %>
+    </td>
+    <td class="<%= 'sorted-asc' if params[:sort_by] == 'release_date' && params[:direction] == 'asc' %>
+               <%= 'sorted-desc' if params[:sort_by] == 'release_date' && params[:direction] == 'desc' %>">
+      <%= movie.release_date %>
+    </td>
+    <td>
+      <%= link_to "Show", movie_path(movie, request.query_parameters) %> |
+      <%= link_to "Edit", edit_movie_path(movie, request.query_parameters) %> |
+      <%= link_to "Delete", movie, method: :delete, data: { confirm: "Are you sure?" } %>
+    </td>
+  </tr>
+<% end %>
+</tbody>
 
   <tfoot>
     <tr>

@@ -1,0 +1,135 @@
+/* General styling */
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 20px;
+
+    color: grey;
+
+    
+  }
+  
+  table {
+    width: 80%;
+    margin: auto;
+    border-radius: 1;
+    border-color: grey;
+    border-style: ridge;
+    background-color: #fff;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid grey;
+  }
+  
+  th {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  
+  /* Styling for sorted columns */
+  .sorted-asc {
+    background-color: #d4edda;
+  }
+  
+  .sorted-desc {
+    background-color: #f8d7da;
+  }
+  
+  .sort-symbol {
+    margin-left: 5px;
+    font-size: 1.2rem;
+  }
+  
+  .sorted-asc .sort-symbol {
+    color: green;
+  }
+  
+  .sorted-desc .sort-symbol {
+    color: red;
+  }
+  
+  /* Adding additional structural and visual elements */
+  tfoot td {
+    text-align: center;
+    font-weight: bold;
+    padding: 15px 0;
+    background-color: #f2f2f2;
+  }
+  
+  a {
+    margin: auto;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  td a {
+    font-size: 0.9rem;
+    margin-right: 5px;
+  }
+  
+  
+  /* Styling for 'New Movie' link */
+  tfoot td a {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #28a745;
+  }
+  
+  tfoot td a:hover {
+    color: #218838;
+  }
+  
+  /* Form and Button Styling */
+button, .button {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+button:hover, .button:hover {
+  background-color: #218838;
+}
+
+button:focus, .button:focus {
+  outline: none;
+}
+
+div {
+  text-align: center;
+  margin-top: 20px;
+}
+
+div a, div button {
+  margin: 0 5px;
+}
+
+/* For the "Destroy" button in the show and edit pages */
+button[type="submit"] {
+  background-color: #dc3545;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 8px 12px;
+}
+
+button[type="submit"]:hover {
+  background-color: #c82333;
+}
